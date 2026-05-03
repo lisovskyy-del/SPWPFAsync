@@ -13,7 +13,15 @@
             <TextBlock FontSize="15" HorizontalAlignment="Center" FontFamily="Bahnschrift" Margin="5">Enter any text:</TextBlock>
             <TextBox x:Name="TextBox" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" Height="150" Width="300"></TextBox>
 
-            <Button x:Name="ExecuteButton" Click="ExecuteButton_OnClick" Width="200" FontSize="20" Margin="5">Analyze</Button>
+            <StackPanel HorizontalAlignment="Center" Margin="5">
+                <CheckBox x:Name="SentencesCheckBox" IsChecked="False">Count sentences</CheckBox>
+                <CheckBox x:Name="DigitsCheckBox" IsChecked="False">Count digits</CheckBox>
+                <CheckBox x:Name="WordsCheckBox" IsChecked="False">Count words</CheckBox>
+                <CheckBox x:Name="QuestionsCheckBox" IsChecked="False">Count questions</CheckBox>
+                <CheckBox x:Name="ExclamationsCheckBox" IsChecked="False">Count exclamations</CheckBox>
+            </StackPanel>
+
+            <Button x:Name="ExecuteButton" Click="ExecuteButton_OnClick" Width="200" FontSize="20">Analyze</Button>
             <Button x:Name="StopButton" Click="StopButton_OnClick" Width="200" FontSize="20" Margin="5">Stop</Button>
         </StackPanel>
     </Grid>
