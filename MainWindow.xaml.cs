@@ -74,7 +74,7 @@ namespace SPWPFAsync
             {
                 string filePath = "result.txt";
 
-                await File.WriteAllTextAsync(filePath, result, token);
+                Task task = Task.Run(async () => await File.WriteAllTextAsync(filePath, result, token), token);
 
                 MessageBox.Show($"Result saved to {filePath}", "Result", MessageBoxButton.OK, MessageBoxImage.Information);
             }
