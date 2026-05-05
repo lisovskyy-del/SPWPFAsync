@@ -21,6 +21,7 @@
                 <CheckBox x:Name="ExclamationsCheckBox" IsChecked="False">Count exclamations</CheckBox>
             </StackPanel>
 
+            <CheckBox x:Name="ResultInFileCheckBox" IsChecked="False" HorizontalAlignment="Center" Margin="5">Result in file</CheckBox>
             <Button x:Name="ExecuteButton" Click="ExecuteButton_OnClick" Width="200" FontSize="20">Analyze</Button>
             <Button x:Name="StopButton" Click="StopButton_OnClick" Width="200" FontSize="20" Margin="5">Stop</Button>
         </StackPanel>

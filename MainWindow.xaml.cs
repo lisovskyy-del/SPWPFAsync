@@ -66,14 +66,22 @@ namespace SPWPFAsync
             bool countDigits = DigitsCheckBox.IsChecked ?? false;
             bool countQuestions = QuestionsCheckBox.IsChecked ?? false;
             bool countExclamations = ExclamationsCheckBox.IsChecked ?? false;
+            bool resultInFile = ResultInFileCheckBox.IsChecked ?? false;
 
             string result = await AnalyzeTextAsync(text, token, countSentences, countWords, countDigits, countQuestions, countExclamations);
 
-            string filePath = "result.txt";
+            if (resultInFile)
+            {
+                string filePath = "result.txt";
 
-            await File.WriteAllTextAsync(filePath, result, token);
+                await File.WriteAllTextAsync(filePath, result, token);
 
-            MessageBox.Show($"Result saved to {filePath}");
+                MessageBox.Show($"Result saved to {filePath}", "Result", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show(result, "Result", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
 
         private void ErrorMessageBox()
