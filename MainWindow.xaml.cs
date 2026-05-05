@@ -123,13 +123,13 @@ namespace SPWPFAsync
                 token.ThrowIfCancellationRequested();
 
                 if (countDigits && char.IsDigit(ch))
-                    amountOfDigits++;
+                    Interlocked.Increment(ref amountOfDigits);
 
                 if (countQuestions && ch == '?')
-                    amountOfQuestions++;
+                    Interlocked.Increment(ref amountOfQuestions);
 
                 if (countExclamations && ch == '!')
-                    amountOfExclamations++;
+                    Interlocked.Increment(ref amountOfExclamations);
 
                 await Task.Delay(1, token); // імітація важкої роботи, для ефективності можна видалити
             }
